@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name='impact-site-verification' value='287e0058-ade0-4ff7-bfdb-59d54b90ddf1'>
     <title>Freelance Fee Calculator — Upwork, Fiverr & PayPal Commission Tool</title>
     <meta name="description" content="Free online freelance fee calculator. Instantly calculate Upwork, Fiverr, PayPal, and Stripe fees to find out your exact net payout or how much to charge clients.">
     <style>
@@ -48,7 +47,22 @@
         .fee-val { color: var(--red); }
         .net-val { color: var(--green); font-size: 1.5rem; }
 
-        .ad-placeholder { background: #f1f5f9; border: 1px dashed #cbd5e1; border-radius: 10px; padding: 20px; text-align: center; color: #94a3b8; font-size: 0.85rem; margin: 25px 0; }
+                .cpa-box { background: #ffffff; border: 1px solid #bbf7d0; border-radius: 16px; padding: 22px; margin: 25px 0; box-shadow: 0 4px 16px rgba(22, 163, 74, 0.06); }
+        .cpa-header { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 12px; flex-wrap: wrap; }
+        .cpa-title { font-size: 1.05rem; font-weight: 700; color: #0f172a; }
+        .cpa-badge { background: #dcfce7; color: #166534; font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: 999px; }
+        .cpa-desc { font-size: 0.92rem; color: #334155; margin-bottom: 16px; }
+        .cpa-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        @media (max-width: 560px) { .cpa-grid { grid-template-columns: 1fr; } }
+        .cpa-item { background: #f8fafc; border: 1px solid var(--border); border-radius: 12px; padding: 14px; display: flex; flex-direction: column; justify-content: space-between; }
+        .cpa-item strong { font-size: 0.98rem; color: #0f172a; display: block; margin-bottom: 4px; }
+        .cpa-item span { font-size: 0.84rem; color: var(--muted); margin-bottom: 12px; display: block; }
+        .cpa-btn { display: inline-block; text-align: center; padding: 10px 14px; border-radius: 8px; font-weight: 700; font-size: 0.9rem; text-decoration: none; transition: 0.2s; }
+        .btn-wise { background: #9fe870; color: #163300; }
+        .btn-wise:hover { background: #8ce058; }
+        .btn-payoneer { background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; }
+        .btn-payoneer:hover { background: #dbeafe; }
+
 
         .seo-content { background: var(--card); border-radius: 16px; padding: 28px; border: 1px solid var(--border); }
         .seo-content h2 { font-size: 1.35rem; margin: 20px 0 10px; }
@@ -113,8 +127,28 @@
         </div>
     </div>
 
-    <div class="ad-placeholder">
-        Advertisement / Partner Banner Space (e.g. Wise or Payoneer Affiliate Link)
+        <div class="cpa-box">
+        <div class="cpa-header">
+            <span class="cpa-title">Keep More of Your Payouts: Lower Transfer & FX Fees</span>
+            <span class="cpa-badge" id="wise-save-badge">Save up to $22 on $500</span>
+        </div>
+        <p class="cpa-desc">Traditional gateways charge 3%–5% in hidden currency markups. Compare low-fee multi-currency accounts built for US & international freelancers:</p>
+        <div class="cpa-grid">
+            <div class="cpa-item">
+                <div>
+                    <strong>Wise Business & Personal</strong>
+                    <span>Mid-market exchange rate with transparent fees from 0.43%. Local USD, EUR & GBP bank details.</span>
+                </div>
+                <a href="https://wise.com" target="_blank" rel="nofollow sponsored noopener" class="cpa-btn btn-wise" id="wise-aff-link">Compare Wise Rates &rarr;</a>
+            </div>
+            <div class="cpa-item">
+                <div>
+                    <strong>Payoneer Global Account</strong>
+                    <span>Receive payouts directly from Upwork, Fiverr & direct US/EU enterprise clients in multiple currencies.</span>
+                </div>
+                <a href="https://payoneer.com" target="_blank" rel="nofollow sponsored noopener" class="cpa-btn btn-payoneer" id="payoneer-aff-link">Explore Payoneer &rarr;</a>
+            </div>
+        </div>
     </div>
 
     <section class="seo-content">
@@ -125,43 +159,18 @@
             <li><strong>Reverse Calculation (Charge Client):</strong> Switch to the second tab, enter the exact amount you want to keep, and get the exact invoice amount you should send to your client.</li>
         </ul>
 
-        <h2>Popular Freelance & Payment Fee Rates</h2>
+        <h2>Popular Freelance & International Payout Fee Rates</h2>
         <p><strong>Upwork:</strong> Charges a flat 10% service fee on all contracts (hourly, fixed-price, and Project Catalog).</p>
         <p><strong>Fiverr:</strong> Deducts a 20% commission from every completed order and tip.</p>
-        <p><strong>PayPal & Stripe:</strong> Standard online payment processing typically ranges from 2.9% to 4.49% plus a small fixed transaction fee ($0.30–$0.49).</p>
+        <p><strong>PayPal & Stripe:</strong> Standard online payment processing typically ranges from 2.9% to 4.49% plus a small fixed transaction fee ($0.30–$0.49), plus 3%–4% FX conversion spread.</p>
+        <p><strong>Wise & Payoneer:</strong> Ideal for cross-border client invoices and marketplace withdrawals, offering local receiving accounts and significantly lower currency conversion costs than traditional wire transfers.</p>
     </section>
 
-    <!-- NATIVE CPA BLOCK: FREELANCE FEE -->
-<div style="margin:24px 0; padding:20px; border-radius:12px; background:#f8fafc; border:1px solid #cbd5e1; color:#0f172a; font-family:inherit; box-shadow:0 2px 4px rgba(0,0,0,0.03);">
-  <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:8px;">
-    <span style="font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.6px; color:#2563eb; background:#eff6ff; padding:3px 8px; border-radius:5px;">Smart Savings Tip</span>
-    <span style="font-size:12px; color:#64748b;">Trusted by 16M+ freelancers</span>
-  </div>
-  <div style="font-size:17px; font-weight:700; margin-bottom:6px; color:#0f172a;">
-    Stop losing 3%–5% on international transfer &amp; currency fees
-  </div>
-  <p style="font-size:14px; line-height:1.5; color:#475569; margin:0 0 14px 0;">
-    Receive Upwork, Fiverr, and direct client payments in USD, EUR, or GBP with local bank details and the real mid-market exchange rate.
-  </p>
-  <a href="#WISE_LINK" target="_blank" rel="nofollow sponsored noopener" style="display:inline-block; background:#16a34a; color:#ffffff; text-decoration:none; font-weight:600; font-size:14px; padding:10px 18px; border-radius:8px;">
-    Open Free Wise Business Account →
-  </a>
-  <div style="font-size:11px; color:#94a3b8; margin-top:10px;">
-    Affiliate disclosure: We may earn a commission at no extra cost to you.
-  </div>
-</div>
-
     <footer>
-        <div style="margin-top:28px;padding:18px;border-radius:14px;border:1px solid #e2e8f0;background:#f8fafc;text-align:center;font-family:sans-serif;font-size:14px;color:#0f172a;">
-  <strong style="display:block;margin-bottom:8px;">More Free Financial & Tech Calculators:</strong>
-  <a href="https://valeryivch-maker.github.io/crypto-staking-calculator/" target="_blank" style="color:#2563eb;text-decoration:none;font-weight:600;margin:0 8px;">Crypto Staking & APY Calculator</a> |
-  <a href="https://valeryivch-maker.github.io/ai-token-cost-calculator/" target="_blank" style="color:#2563eb;text-decoration:none;font-weight:600;margin:0 8px;">AI Token & LLM API Cost Calculator</a> |
-  <a href="https://valeryivch-maker.github.io/roas-roi-calculator/" target="_blank" style="color:#2563eb;text-decoration:none;font-weight:600;margin:0 8px;">Ad ROI & ROAS Calculator</a> |
-  <a href="https://valeryivch-maker.github.io/compound-interest-calculator/" target="_blank" style="color:#2563eb;text-decoration:none;font-weight:600;margin:0 8px;">Compound Interest & 401(k) Investment Calculator</a>
-
-        </div>
-        <p>&copy; 2026 Free Freelance Calculator. Built for independent contractors and creators.</p>
+        <p>&copy; 2026 Smart Finance Calculators. Built for independent contractors and creators.</p>
+        <p style="margin-top:6px; font-size:0.78rem;">Affiliate Disclosure: Some links on this page are partner links. We may earn a referral commission at no extra cost to you.</p>
     </footer>
+
 </div>
 <script>
     let mode = 'receive';
@@ -233,9 +242,16 @@
 
         document.getElementById('res-fee').innerText = '-$' + fee.toFixed(2);
         document.getElementById('res-main').innerText = '$' + mainResult.toFixed(2);
+
+        const estSave = Math.max(5, Math.round(amount * 0.044));
+        const badge = document.getElementById('wise-save-badge');
+        if (badge) {
+            badge.innerText = amount > 0 ? 'Save up to $' + estSave + ' vs PayPal FX' : 'Save up to 80% on FX fees';
+        }
     }
 
     calculate();
+
 </script>
 
 </body>
