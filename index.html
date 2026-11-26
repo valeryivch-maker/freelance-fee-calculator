@@ -135,9 +135,13 @@
                 <strong style="display:block; font-size:0.75rem; text-transform:uppercase; letter-spacing:0.04em; color:#15803d; margin-bottom:2px;">Next Logical Step &rarr;</strong>
                 See how <strong id="next-step-amt">$450.00</strong> grows if invested in a Solo 401(k) or S&amp;P 500 index:
             </div>
-            <a href="#" id="next-step-link" target="_blank" rel="noopener" style="background:#16a34a; color:#ffffff; text-decoration:none; font-weight:700; font-size:0.85rem; padding:9px 14px; border-radius:8px; white-space:nowrap;">Forecast Growth &rarr;</a>
+            <div style="display:flex; gap:8px; flex-wrap:wrap;">
+                <button type="button" id="share-est-btn" onclick="copyShareLink()" style="background:#ffffff; color:#15803d; border:1px solid #86efac; font-weight:700; font-size:0.82rem; padding:8px 12px; border-radius:8px; cursor:pointer; white-space:nowrap;">&#128279; Copy Estimate Link</button>
+                <a href="#" id="next-step-link" target="_blank" rel="noopener" style="background:#16a34a; color:#ffffff; text-decoration:none; font-weight:700; font-size:0.85rem; padding:9px 14px; border-radius:8px; white-space:nowrap;">Forecast Growth &rarr;</a>
+            </div>
         </div>
     </div>
+
 
 
         <div class="cpa-box">
@@ -281,7 +285,18 @@
         }
     }
 
+    function copyShareLink() {
+        const platform = document.getElementById('platform').value || 'upwork';
+        const amount = document.getElementById('amount').value || 500;
+        const url = window.location.origin + window.location.pathname + '?platform=' + encodeURIComponent(platform) + '&amount=' + encodeURIComponent(amount) + '&mode=' + encodeURIComponent(mode);
+        navigator.clipboard.writeText(url).then(() => {
+            const btn = document.getElementById('share-est-btn');
+            if (btn) { btn.innerHTML = '&#10003; Link Copied!'; setTimeout(() => { btn.innerHTML = '&#128279; Copy Estimate Link'; }, 1800); }
+        });
+    }
+
     (function initFromUrl() {
+
         const params = new URLSearchParams(window.location.search);
         const pPlatform = params.get('platform');
         const pAmount = params.get('amount');
