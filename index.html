@@ -70,8 +70,14 @@
         .seo-content p { color: #334155; margin-bottom: 15px; }
         .seo-content ul { margin-left: 20px; color: #334155; margin-bottom: 15px; }
         .seo-content li { margin-bottom: 8px; }
-        footer { text-align: center; color: var(--muted); font-size: 0.85rem; margin-top: 30px; }
+        footer { text-align: center; color: var(--muted); font-size: 0.82rem; margin-top: 30px; }
+        .legal-links { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; margin-top: 8px; }
+        .legal-links a { color: var(--primary); text-decoration: none; font-size: 0.78rem; font-weight: 600; cursor: pointer; }
+        .legal-links a:hover { text-decoration: underline; }
+        .legal-details { max-width: 680px; margin: 12px auto 0; text-align: left; background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px; font-size: 0.78rem; line-height: 1.5; color: #475569; display: none; }
+        .legal-details.open { display: block; }
     </style>
+
 </head>
 <body>
 
@@ -191,11 +197,21 @@
         <a href="https://valeryivch-maker.github.io/compound-interest-calculator/" target="_blank" style="color:#2563eb; text-decoration:none; font-weight:600;">Compound Interest &amp; 401(k) Investment Calculator</a>
     </div>
 
-    <footer>
-        <p>&copy; 2026 Smart Finance Calculators. Built for independent contractors and creators.</p>
-
-        <p style="margin-top:6px; font-size:0.78rem;">Affiliate Disclosure: Some links on this page are partner links. We may earn a referral commission at no extra cost to you.</p>
+        <footer>
+        <p>&copy; 2026 Smart Finance Calculators &bull; Built for independent contractors and creators</p>
+        <p style="margin-top:6px; font-size:0.76rem;"><strong>FTC Affiliate Disclosure:</strong> Some links on this page (including Wise and Payoneer) are partner referrals. We may earn a commission at no extra cost to you.</p>
+        <div class="legal-links">
+            <a onclick="toggleLegal('privacy')">Privacy Policy</a>
+            <a onclick="toggleLegal('disclaimer')">Financial &amp; Fee Disclaimer</a>
+        </div>
+        <div id="legal-privacy" class="legal-details">
+            <strong>Privacy Policy (Updated Nov 2026):</strong> All fee and payout calculations run 100% locally in your browser. We do not collect, store, or transmit your invoice figures or personal data. We use privacy-first, cookieless Cloudflare Web Analytics solely to measure aggregate page traffic without tracking individual users.
+        </div>
+        <div id="legal-disclaimer" class="legal-details">
+            <strong>Financial &amp; Fee Disclaimer:</strong> Platform commissions (Upwork, Fiverr, PayPal, Stripe) and FX savings estimates are provided strictly for informational purposes and do not constitute financial, tax, or legal advice. Always verify current fee schedules directly with your payment provider.
+        </div>
     </footer>
+
 
 </div>
 <script>
@@ -315,7 +331,16 @@
         calculate();
     })();
 
+    function toggleLegal(type) {
+        ['privacy', 'disclaimer'].forEach(k => {
+            const el = document.getElementById('legal-' + k);
+            if (!el) return;
+            if (k === type) el.classList.toggle('open');
+            else el.classList.remove('open');
+        });
+    }
 </script>
+
 
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "c1d700a5fdf540fa94f43b52a8651a2f"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
